@@ -1,0 +1,12 @@
+C:\Users\fabio.fantato.DOITLEAN\Downloads\advanced_template\OutSystems.IbanChecker\bin\Release\net6.0\DoiTLean.DiffJSON.deps.json
+C:\Users\fabio.fantato.DOITLEAN\Downloads\advanced_template\OutSystems.IbanChecker\bin\Release\net6.0\DoiTLean.DiffJSON.dll
+C:\Users\fabio.fantato.DOITLEAN\Downloads\advanced_template\OutSystems.IbanChecker\bin\Release\net6.0\DoiTLean.DiffJSON.pdb
+C:\Users\fabio.fantato.DOITLEAN\Downloads\advanced_template\OutSystems.IbanChecker\obj\Release\net6.0\DoiTLean.DiffJSON.csproj.AssemblyReference.cache
+C:\Users\fabio.fantato.DOITLEAN\Downloads\advanced_template\OutSystems.IbanChecker\obj\Release\net6.0\DoiTLean.DiffJSON.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fabio.fantato.DOITLEAN\Downloads\advanced_template\OutSystems.IbanChecker\obj\Release\net6.0\DoiTLean.DiffJSON.AssemblyInfoInputs.cache
+C:\Users\fabio.fantato.DOITLEAN\Downloads\advanced_template\OutSystems.IbanChecker\obj\Release\net6.0\DoiTLean.DiffJSON.AssemblyInfo.cs
+C:\Users\fabio.fantato.DOITLEAN\Downloads\advanced_template\OutSystems.IbanChecker\obj\Release\net6.0\DoiTLean.DiffJSON.csproj.CoreCompileInputs.cache
+C:\Users\fabio.fantato.DOITLEAN\Downloads\advanced_template\OutSystems.IbanChecker\obj\Release\net6.0\DoiTLean.DiffJSON.dll
+C:\Users\fabio.fantato.DOITLEAN\Downloads\advanced_template\OutSystems.IbanChecker\obj\Release\net6.0\refint\DoiTLean.DiffJSON.dll
+C:\Users\fabio.fantato.DOITLEAN\Downloads\advanced_template\OutSystems.IbanChecker\obj\Release\net6.0\DoiTLean.DiffJSON.pdb
+C:\Users\fabio.fantato.DOITLEAN\Downloads\advanced_template\OutSystems.IbanChecker\obj\Release\net6.0\ref\DoiTLean.DiffJSON.dll

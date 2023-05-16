@@ -1,0 +1,6 @@
+C:\Users\fabio.fantato.DOITLEAN\Downloads\advanced_template\OutSystems.IbanChecker\bin\Release\net6.0\linux-x64\publish\DoiTLean.DiffJSON.dll
+C:\Users\fabio.fantato.DOITLEAN\Downloads\advanced_template\OutSystems.IbanChecker\bin\Release\net6.0\linux-x64\publish\DoiTLean.DiffJSON.deps.json
+C:\Users\fabio.fantato.DOITLEAN\Downloads\advanced_template\OutSystems.IbanChecker\bin\Release\net6.0\linux-x64\publish\DoiTLean.DiffJSON.pdb
+C:\Users\fabio.fantato.DOITLEAN\Downloads\advanced_template\OutSystems.IbanChecker\bin\Release\net6.0\linux-x64\publish\JsonDiffPatchDotNet.dll
+C:\Users\fabio.fantato.DOITLEAN\Downloads\advanced_template\OutSystems.IbanChecker\bin\Release\net6.0\linux-x64\publish\Newtonsoft.Json.dll
+C:\Users\fabio.fantato.DOITLEAN\Downloads\advanced_template\OutSystems.IbanChecker\bin\Release\net6.0\linux-x64\publish\OutSystems.ExternalLibraries.SDK.dll

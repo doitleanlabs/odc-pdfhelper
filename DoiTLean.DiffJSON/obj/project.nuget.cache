@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "C/4G6MbWecPGpjaYa1pepL2eFDgmZ5NUn/hWugwVhuPRgNMUduUYbsl3uy/G8LFCPQ4/rQ6Yxo6ybG9Xx74TBA==",
+  "dgSpecHash": "q20nOLrRPY869y/fIIaCTW02imS9CpBGQjGnXRSmJlWaLneZgPjZ9RUNrDiPSFUWOzD92FNkFcmoTXNMz7hwQQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fabio.fantato.DOITLEAN\\source\\repos\\odc-diffjson\\DoiTLean.DiffJSON\\DoiTLean.DiffJSON.csproj",
+  "projectFilePath": "C:\\Users\\fabio.fantato.DOITLEAN\\Source\\Repos\\odc-diffjson-o\\DoiTLean.DiffJSON\\DoiTLean.DiffJSON.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fabio.fantato.DOITLEAN\\.nuget\\packages\\jsondiffpatch.net\\2.3.0\\jsondiffpatch.net.2.3.0.nupkg.sha512",
     "C:\\Users\\fabio.fantato.DOITLEAN\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",

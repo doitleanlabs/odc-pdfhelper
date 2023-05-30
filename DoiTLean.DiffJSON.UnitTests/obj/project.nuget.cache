@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xeDFmPw+wXjKncRtxI8HpEqjMGdrhueCOwhmicRrNql4HepJS4StctNzN0MAMVAK6/hpwrvfurCe3CkA0vLU0w==",
+  "dgSpecHash": "i5jHvFHdq02Yi8bNqV5umeVVnTCb3lNmvYoA4x2pf3jRGkGZLUuyrU9cqj6mnzDjdQ+ejVpA4zJgl5ZZZCrBHg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fabio.fantato.DOITLEAN\\source\\repos\\odc-diffjson\\DoiTLean.DiffJSON.UnitTests\\DoiTLean.DiffJSON.UnitTests.csproj",
+  "projectFilePath": "C:\\Users\\fabio.fantato.DOITLEAN\\Source\\Repos\\odc-diffjson-o\\DoiTLean.DiffJSON.UnitTests\\DoiTLean.DiffJSON.UnitTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fabio.fantato.DOITLEAN\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\fabio.fantato.DOITLEAN\\.nuget\\packages\\jsondiffpatch.net\\2.3.0\\jsondiffpatch.net.2.3.0.nupkg.sha512",

@@ -1801,11 +1801,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fabio.fantato.DOITLEAN\\source\\repos\\odc-diffjson\\DoiTLean.DiffJSON.UnitTests\\DoiTLean.DiffJSON.UnitTests.csproj",
+      "projectUniqueName": "C:\\Users\\fabio.fantato.DOITLEAN\\Source\\Repos\\odc-diffjson-o\\DoiTLean.DiffJSON.UnitTests\\DoiTLean.DiffJSON.UnitTests.csproj",
       "projectName": "DoiTLean.DiffJSON.UnitTests",
-      "projectPath": "C:\\Users\\fabio.fantato.DOITLEAN\\source\\repos\\odc-diffjson\\DoiTLean.DiffJSON.UnitTests\\DoiTLean.DiffJSON.UnitTests.csproj",
+      "projectPath": "C:\\Users\\fabio.fantato.DOITLEAN\\Source\\Repos\\odc-diffjson-o\\DoiTLean.DiffJSON.UnitTests\\DoiTLean.DiffJSON.UnitTests.csproj",
       "packagesPath": "C:\\Users\\fabio.fantato.DOITLEAN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fabio.fantato.DOITLEAN\\source\\repos\\odc-diffjson\\DoiTLean.DiffJSON.UnitTests\\obj\\",
+      "outputPath": "C:\\Users\\fabio.fantato.DOITLEAN\\Source\\Repos\\odc-diffjson-o\\DoiTLean.DiffJSON.UnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\fabio.fantato.DOITLEAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1822,8 +1822,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\fabio.fantato.DOITLEAN\\source\\repos\\odc-diffjson\\DoiTLean.DiffJSON\\DoiTLean.DiffJSON.csproj": {
-              "projectPath": "C:\\Users\\fabio.fantato.DOITLEAN\\source\\repos\\odc-diffjson\\DoiTLean.DiffJSON\\DoiTLean.DiffJSON.csproj"
+            "C:\\Users\\fabio.fantato.DOITLEAN\\Source\\Repos\\odc-diffjson-o\\DoiTLean.DiffJSON\\DoiTLean.DiffJSON.csproj": {
+              "projectPath": "C:\\Users\\fabio.fantato.DOITLEAN\\Source\\Repos\\odc-diffjson-o\\DoiTLean.DiffJSON\\DoiTLean.DiffJSON.csproj"
             }
           }
         }

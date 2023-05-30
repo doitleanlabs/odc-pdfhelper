@@ -10,7 +10,6 @@
       "DoiTLean.DiffJSON.UnitTests/1.0.0": {
         "dependencies": {
           "DoiTLean.DiffJSON": "1.0.0",
-          "IbanNet": "5.8.1",
           "Microsoft.NET.Test.Sdk": "17.1.0",
           "NUnit": "3.13.3",
           "NUnit.Analyzers": "3.3.0",
@@ -22,19 +21,6 @@
         }
       },
       "coverlet.collector/3.1.2": {},
-      "IbanNet/5.8.1": {
-        "runtime": {
-          "lib/net6.0/IbanNet.dll": {
-            "assemblyVersion": "5.8.1.0",
-            "fileVersion": "5.8.1.0"
-          }
-        },
-        "resources": {
-          "lib/net6.0/nl/IbanNet.resources.dll": {
-            "locale": "nl"
-          }
-        }
-      },
       "JsonDiffPatch.Net/2.3.0": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.3"
@@ -375,13 +361,6 @@
       "sha512": "sha512-wuLDIDKD5XMt0A7lE31JPenT7QQwZPFkP5rRpdJeblyXZ9MGLI8rYjvm5fvAKln+2/X+4IxxQDxBtwdrqKNLZw==",
       "path": "coverlet.collector/3.1.2",
       "hashPath": "coverlet.collector.3.1.2.nupkg.sha512"
-    },
-    "IbanNet/5.8.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-FrUXW+iUYKhY0TNNJzzZOMDrFjmDysfTgc7R84CUi6/d6iRMOkdVzqhhJua4R2nS27/DbQRGD1iaKueg4gvqGw==",
-      "path": "ibannet/5.8.1",
-      "hashPath": "ibannet.5.8.1.nupkg.sha512"
     },
     "JsonDiffPatch.Net/2.3.0": {
       "type": "package",

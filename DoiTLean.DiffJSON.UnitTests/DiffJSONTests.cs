@@ -1,5 +1,3 @@
-using IbanNet;
-using IbanNet.Registry;
 using NUnit.Framework;
 using OutSystems.ExternalLibraries.SDK;
 using JSONPair = DoiTLean.DiffJSON.Structures.JSONPair;

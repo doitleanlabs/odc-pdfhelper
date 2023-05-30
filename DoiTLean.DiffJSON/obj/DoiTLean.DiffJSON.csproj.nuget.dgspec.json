@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fabio.fantato.DOITLEAN\\Downloads\\advanced_template\\OutSystems.IbanChecker\\DoiTLean.DiffJSON.csproj": {}
+    "C:\\Users\\fabio.fantato.DOITLEAN\\source\\repos\\odc-diffjson\\DoiTLean.DiffJSON\\DoiTLean.DiffJSON.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fabio.fantato.DOITLEAN\\Downloads\\advanced_template\\OutSystems.IbanChecker\\DoiTLean.DiffJSON.csproj": {
+    "C:\\Users\\fabio.fantato.DOITLEAN\\source\\repos\\odc-diffjson\\DoiTLean.DiffJSON\\DoiTLean.DiffJSON.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fabio.fantato.DOITLEAN\\Downloads\\advanced_template\\OutSystems.IbanChecker\\DoiTLean.DiffJSON.csproj",
+        "projectUniqueName": "C:\\Users\\fabio.fantato.DOITLEAN\\source\\repos\\odc-diffjson\\DoiTLean.DiffJSON\\DoiTLean.DiffJSON.csproj",
         "projectName": "DoiTLean.DiffJSON",
-        "projectPath": "C:\\Users\\fabio.fantato.DOITLEAN\\Downloads\\advanced_template\\OutSystems.IbanChecker\\DoiTLean.DiffJSON.csproj",
+        "projectPath": "C:\\Users\\fabio.fantato.DOITLEAN\\source\\repos\\odc-diffjson\\DoiTLean.DiffJSON\\DoiTLean.DiffJSON.csproj",
         "packagesPath": "C:\\Users\\fabio.fantato.DOITLEAN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fabio.fantato.DOITLEAN\\Downloads\\advanced_template\\OutSystems.IbanChecker\\obj\\",
+        "outputPath": "C:\\Users\\fabio.fantato.DOITLEAN\\source\\repos\\odc-diffjson\\DoiTLean.DiffJSON\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\fabio.fantato.DOITLEAN\\AppData\\Roaming\\NuGet\\NuGet.Config",

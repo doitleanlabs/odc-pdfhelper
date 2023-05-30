@@ -8,6 +8,8 @@ using Newtonsoft.Json.Linq;
 using JsonDiffPatchDotNet;
 using System.Text;
 using DoiTLean.DiffJSON.Structures;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace DoiTLean.DiffJSON {
     /// <summary>
@@ -63,6 +65,81 @@ namespace DoiTLean.DiffJSON {
             }
             return "";
 
+        }
+
+        public string JSON_Listify(string JSONIn, string Path)
+        {
+            string JSONOut = "";
+
+            string[] path = Path.Trim().Split('.');
+            JToken root = Inner_Listify(JToken.Parse(JSONIn), path, 0);
+
+            StringBuilder sb = new StringBuilder();
+
+            using (JsonWriter json = new JsonTextWriter(new StringWriter(sb)))
+            {
+                json.Formatting = Formatting.None;
+                json.DateFormatHandling = DateFormatHandling.IsoDateFormat;
+                root.WriteTo(json);
+            }
+
+            JSONOut = sb.ToString();
+            return JSONOut;
+        } // MssJSON_Listify
+
+        private JToken Inner_Listify(JToken root, string[] path, int index)
+        {
+
+            if (root.Type == JTokenType.Array)
+            {
+                // if we're at an array, simply apply to all elements
+                JArray arr = (JArray)root;
+                for (int i = 0; i < arr.Count; i++)
+                {
+                    arr[i] = Inner_Listify(arr[i], path, index);
+                }
+                return arr;
+            }
+
+            if (path.Length == index)
+            {
+                // nothing to do if we're not at an object
+                if (root.Type != JTokenType.Object)
+                    return root;
+
+                // do the listification
+                JObject obj = (JObject)root;
+                JArray res = new JArray();
+                foreach (JProperty p in obj.Properties())
+                {
+                    JObject tmp = new JObject();
+                    tmp["key"] = p.Name;
+                    tmp["value"] = p.Value;
+                    res.Add(tmp);
+                }
+                return res;
+
+            }
+            else
+            {
+                if (path[index].Equals(""))
+                    return Inner_Listify(root, path, index + 1);
+
+                // path[index] != ""
+                if (root.Type == JTokenType.Object)
+                {
+                    JObject obj = (JObject)root;
+                    JToken r = obj[path[index]];
+
+                    if (r == null || r.Type == JTokenType.Null)
+                        return root;
+
+                    obj[path[index]] = Inner_Listify(r, path, index + 1);
+                    return root;
+                }
+
+                return root;
+            }
         }
 
     }

@@ -8,24 +8,6 @@
           "build/netstandard1.0/coverlet.collector.targets": {}
         }
       },
-      "IbanNet/5.8.1": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IbanNet.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IbanNet.dll": {
-            "related": ".xml"
-          }
-        },
-        "resource": {
-          "lib/net6.0/nl/IbanNet.resources.dll": {
-            "locale": "nl"
-          }
-        }
-      },
       "JsonDiffPatch.Net/2.3.0": {
         "type": "package",
         "dependencies": {
@@ -446,24 +428,6 @@
         "type": "package",
         "build": {
           "build/netstandard1.0/coverlet.collector.targets": {}
-        }
-      },
-      "IbanNet/5.8.1": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IbanNet.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IbanNet.dll": {
-            "related": ".xml"
-          }
-        },
-        "resource": {
-          "lib/net6.0/nl/IbanNet.resources.dll": {
-            "locale": "nl"
-          }
         }
       },
       "JsonDiffPatch.Net/2.3.0": {
@@ -932,40 +896,6 @@
         "coverlet-icon.png",
         "coverlet.collector.3.1.2.nupkg.sha512",
         "coverlet.collector.nuspec"
-      ]
-    },
-    "IbanNet/5.8.1": {
-      "sha512": "FrUXW+iUYKhY0TNNJzzZOMDrFjmDysfTgc7R84CUi6/d6iRMOkdVzqhhJua4R2nS27/DbQRGD1iaKueg4gvqGw==",
-      "type": "package",
-      "path": "ibannet/5.8.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "IbanNet64.png",
-        "README.md",
-        "ibannet.5.8.1.nupkg.sha512",
-        "ibannet.nuspec",
-        "lib/net462/IbanNet.dll",
-        "lib/net462/IbanNet.xml",
-        "lib/net462/nl/IbanNet.resources.dll",
-        "lib/net472/IbanNet.dll",
-        "lib/net472/IbanNet.xml",
-        "lib/net472/nl/IbanNet.resources.dll",
-        "lib/net6.0/IbanNet.dll",
-        "lib/net6.0/IbanNet.xml",
-        "lib/net6.0/nl/IbanNet.resources.dll",
-        "lib/net7.0/IbanNet.dll",
-        "lib/net7.0/IbanNet.xml",
-        "lib/net7.0/nl/IbanNet.resources.dll",
-        "lib/netstandard1.6/IbanNet.dll",
-        "lib/netstandard1.6/IbanNet.xml",
-        "lib/netstandard1.6/nl/IbanNet.resources.dll",
-        "lib/netstandard2.0/IbanNet.dll",
-        "lib/netstandard2.0/IbanNet.xml",
-        "lib/netstandard2.0/nl/IbanNet.resources.dll",
-        "lib/netstandard2.1/IbanNet.dll",
-        "lib/netstandard2.1/IbanNet.xml",
-        "lib/netstandard2.1/nl/IbanNet.resources.dll"
       ]
     },
     "JsonDiffPatch.Net/2.3.0": {
@@ -1851,14 +1781,13 @@
     },
     "DoiTLean.DiffJSON/1.0.0": {
       "type": "project",
-      "path": "../OutSystems.IbanChecker/DoiTLean.DiffJSON.csproj",
-      "msbuildProject": "../OutSystems.IbanChecker/DoiTLean.DiffJSON.csproj"
+      "path": "../DoiTLean.DiffJSON/DoiTLean.DiffJSON.csproj",
+      "msbuildProject": "../DoiTLean.DiffJSON/DoiTLean.DiffJSON.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "DoiTLean.DiffJSON >= 1.0.0",
-      "IbanNet >= 5.8.1",
       "Microsoft.NET.Test.Sdk >= 17.1.0",
       "NUnit >= 3.13.3",
       "NUnit.Analyzers >= 3.3.0",
@@ -1872,11 +1801,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fabio.fantato.DOITLEAN\\Downloads\\advanced_template\\OutSystems.IbanChecker.UnitTests\\DoiTLean.DiffJSON.UnitTests.csproj",
+      "projectUniqueName": "C:\\Users\\fabio.fantato.DOITLEAN\\source\\repos\\odc-diffjson\\DoiTLean.DiffJSON.UnitTests\\DoiTLean.DiffJSON.UnitTests.csproj",
       "projectName": "DoiTLean.DiffJSON.UnitTests",
-      "projectPath": "C:\\Users\\fabio.fantato.DOITLEAN\\Downloads\\advanced_template\\OutSystems.IbanChecker.UnitTests\\DoiTLean.DiffJSON.UnitTests.csproj",
+      "projectPath": "C:\\Users\\fabio.fantato.DOITLEAN\\source\\repos\\odc-diffjson\\DoiTLean.DiffJSON.UnitTests\\DoiTLean.DiffJSON.UnitTests.csproj",
       "packagesPath": "C:\\Users\\fabio.fantato.DOITLEAN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fabio.fantato.DOITLEAN\\Downloads\\advanced_template\\OutSystems.IbanChecker.UnitTests\\obj\\",
+      "outputPath": "C:\\Users\\fabio.fantato.DOITLEAN\\source\\repos\\odc-diffjson\\DoiTLean.DiffJSON.UnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\fabio.fantato.DOITLEAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1893,8 +1822,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\fabio.fantato.DOITLEAN\\Downloads\\advanced_template\\OutSystems.IbanChecker\\DoiTLean.DiffJSON.csproj": {
-              "projectPath": "C:\\Users\\fabio.fantato.DOITLEAN\\Downloads\\advanced_template\\OutSystems.IbanChecker\\DoiTLean.DiffJSON.csproj"
+            "C:\\Users\\fabio.fantato.DOITLEAN\\source\\repos\\odc-diffjson\\DoiTLean.DiffJSON\\DoiTLean.DiffJSON.csproj": {
+              "projectPath": "C:\\Users\\fabio.fantato.DOITLEAN\\source\\repos\\odc-diffjson\\DoiTLean.DiffJSON\\DoiTLean.DiffJSON.csproj"
             }
           }
         }
@@ -1909,10 +1838,6 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
-          "IbanNet": {
-            "target": "Package",
-            "version": "[5.8.1, )"
-          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[17.1.0, )"

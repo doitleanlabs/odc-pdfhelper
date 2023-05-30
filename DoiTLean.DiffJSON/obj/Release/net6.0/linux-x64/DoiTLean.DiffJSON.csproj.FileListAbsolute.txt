@@ -10,3 +10,15 @@ C:\Users\fabio.fantato.DOITLEAN\Downloads\advanced_template\OutSystems.IbanCheck
 C:\Users\fabio.fantato.DOITLEAN\Downloads\advanced_template\OutSystems.IbanChecker\obj\Release\net6.0\linux-x64\refint\DoiTLean.DiffJSON.dll
 C:\Users\fabio.fantato.DOITLEAN\Downloads\advanced_template\OutSystems.IbanChecker\obj\Release\net6.0\linux-x64\DoiTLean.DiffJSON.pdb
 C:\Users\fabio.fantato.DOITLEAN\Downloads\advanced_template\OutSystems.IbanChecker\obj\Release\net6.0\linux-x64\ref\DoiTLean.DiffJSON.dll
+C:\Users\fabio.fantato.DOITLEAN\source\repos\odc-diffjson\DoiTLean.DiffJSON\bin\Release\net6.0\linux-x64\DoiTLean.DiffJSON.deps.json
+C:\Users\fabio.fantato.DOITLEAN\source\repos\odc-diffjson\DoiTLean.DiffJSON\bin\Release\net6.0\linux-x64\DoiTLean.DiffJSON.dll
+C:\Users\fabio.fantato.DOITLEAN\source\repos\odc-diffjson\DoiTLean.DiffJSON\bin\Release\net6.0\linux-x64\DoiTLean.DiffJSON.pdb
+C:\Users\fabio.fantato.DOITLEAN\source\repos\odc-diffjson\DoiTLean.DiffJSON\obj\Release\net6.0\linux-x64\DoiTLean.DiffJSON.csproj.AssemblyReference.cache
+C:\Users\fabio.fantato.DOITLEAN\source\repos\odc-diffjson\DoiTLean.DiffJSON\obj\Release\net6.0\linux-x64\DoiTLean.DiffJSON.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fabio.fantato.DOITLEAN\source\repos\odc-diffjson\DoiTLean.DiffJSON\obj\Release\net6.0\linux-x64\DoiTLean.DiffJSON.AssemblyInfoInputs.cache
+C:\Users\fabio.fantato.DOITLEAN\source\repos\odc-diffjson\DoiTLean.DiffJSON\obj\Release\net6.0\linux-x64\DoiTLean.DiffJSON.AssemblyInfo.cs
+C:\Users\fabio.fantato.DOITLEAN\source\repos\odc-diffjson\DoiTLean.DiffJSON\obj\Release\net6.0\linux-x64\DoiTLean.DiffJSON.csproj.CoreCompileInputs.cache
+C:\Users\fabio.fantato.DOITLEAN\source\repos\odc-diffjson\DoiTLean.DiffJSON\obj\Release\net6.0\linux-x64\DoiTLean.DiffJSON.dll
+C:\Users\fabio.fantato.DOITLEAN\source\repos\odc-diffjson\DoiTLean.DiffJSON\obj\Release\net6.0\linux-x64\refint\DoiTLean.DiffJSON.dll
+C:\Users\fabio.fantato.DOITLEAN\source\repos\odc-diffjson\DoiTLean.DiffJSON\obj\Release\net6.0\linux-x64\DoiTLean.DiffJSON.pdb
+C:\Users\fabio.fantato.DOITLEAN\source\repos\odc-diffjson\DoiTLean.DiffJSON\obj\Release\net6.0\linux-x64\ref\DoiTLean.DiffJSON.dll

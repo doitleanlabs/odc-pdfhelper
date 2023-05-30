@@ -19,5 +19,20 @@ namespace DoiTLean.DiffJSON
             [OSParameter(DataType = OSDataType.Text, Description = "RightJSON")]
             string RightJSON);
 
+
+        /// <summary>
+        /// Replaces an object identified by Path with a list of name/value pairs.
+        /// 
+        /// This is helpful to pre-process JSON with &quot;dynamic&quot; property names to something that can be translated into the OutSystems Platform types
+        /// </summary>
+        /// <param name="JSONIn">JSON to process</param>
+        /// <param name="Path">Path to the point where processing should happen (where your object is)</param>
+        [OSAction(Description = "Replaces an object identified by Path with a list of name/value pairs", IconResourceName = "DoiTLean.DiffJSON.resources.diff.png", ReturnName = "JSONOut")]
+        string JSON_Listify(
+            [OSParameter(DataType = OSDataType.Text, Description = "JSONIn")]
+            string JSONIn,
+            [OSParameter(DataType = OSDataType.Text, Description = "Path")]
+            string Path);
+
     }
 }

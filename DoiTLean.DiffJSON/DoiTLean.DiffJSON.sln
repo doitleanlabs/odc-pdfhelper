@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoiTLean.DiffJSON", "DoiTLe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{6AFB68E3-53C7-48D0-929A-1074443DC6A0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoiTLean.DiffJSON.UnitTests", "..\OutSystems.IbanChecker.UnitTests\DoiTLean.DiffJSON.UnitTests.csproj", "{4618E2ED-CB8A-46C5-B1E6-28BC82F07A75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoiTLean.DiffJSON.UnitTests", "..\DoiTLean.DiffJSON.UnitTests\DoiTLean.DiffJSON.UnitTests.csproj", "{4618E2ED-CB8A-46C5-B1E6-28BC82F07A75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

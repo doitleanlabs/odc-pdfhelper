@@ -1,13 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\DoiTLean.DiffJSON",
-    "\\DoiTLean.DiffJSON\\bin\\Debug",
-    "\\DoiTLean.DiffJSON\\bin\\Release",
-    "\\DoiTLean.DiffJSON\\obj\\Release",
-    "\\DoiTLean.DiffJSON\\resources",
-    "\\DoiTLean.DiffJSON\\Structures"
+    "\\Dist",
+    "\\DoiTLean.DiffJSON"
   ],
-  "SelectedNode": "\\DoiTLean.DiffJSON.UnitTests",
+  "SelectedNode": "\\DoiTLean.DiffJSON",
   "PreviewInSolutionExplorer": false
 }

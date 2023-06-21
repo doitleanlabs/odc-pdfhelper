@@ -1,10 +1,9 @@
-# odc-diffjson
+# odc-pdfhelper
 
 
 ## Getting started
 
-This assets is a source code for OutSystems External Logic DiffJSON that returns a list with the differences between two JSON objects
-
+This assets is a source code for OutSystems External Logic PDF Helper
 ## OutSystems Links
 
 - [ ] [ODC Documentation](https://success.outsystems.com/documentation/outsystems_developer_cloud/)

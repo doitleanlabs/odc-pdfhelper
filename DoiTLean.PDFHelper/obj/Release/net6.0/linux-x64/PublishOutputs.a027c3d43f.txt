@@ -1,0 +1,6 @@
+C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper\bin\Release\net6.0\linux-x64\publish\DoiTLean.PDFHelper.dll
+C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper\bin\Release\net6.0\linux-x64\publish\DoiTLean.PDFHelper.deps.json
+C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper\bin\Release\net6.0\linux-x64\publish\DoiTLean.PDFHelper.pdb
+C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper\bin\Release\net6.0\linux-x64\publish\JsonDiffPatchDotNet.dll
+C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper\bin\Release\net6.0\linux-x64\publish\Newtonsoft.Json.dll
+C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper\bin\Release\net6.0\linux-x64\publish\OutSystems.ExternalLibraries.SDK.dll

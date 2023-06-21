@@ -12,4 +12,10 @@
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
         <PackageReference Include="OutSystems.ExternalLibraries.SDK" Version="1.4.0" />
     </ItemGroup>
+
+    <ItemGroup>
+      <None Update="resources\pdfhelper.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
 </Project>

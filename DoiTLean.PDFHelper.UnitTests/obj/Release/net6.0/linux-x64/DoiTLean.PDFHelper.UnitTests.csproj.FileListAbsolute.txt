@@ -121,3 +121,4 @@ C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper.Un
 C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper.UnitTests\bin\Release\net6.0\linux-x64\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper.UnitTests\bin\Release\net6.0\linux-x64\Microsoft.Extensions.Options.dll
 C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper.UnitTests\bin\Release\net6.0\linux-x64\Microsoft.Extensions.Primitives.dll
+C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper.UnitTests\bin\Release\net6.0\linux-x64\resources\pdfhelper.png

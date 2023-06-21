@@ -1,19 +1,20 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System;
-using System.Threading.Tasks;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using Newtonsoft.Json.Linq;
-using JsonDiffPatchDotNet;
+﻿using System;
+using System.Collections;
+using System.Data;
 using System.Text;
-using DoiTLean.PDFHelper.Structures;
-using Newtonsoft.Json;
 using System.IO;
-using iText.Kernel.Pdf.Canvas.Parser;
 using iText.Kernel.Pdf;
-using iText.StyledXmlParser.Jsoup.Nodes;
+using iText.Kernel.Utils;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
+using System.Collections.Generic;
+using System.Security.Cryptography;
+using System.Linq;
 using System.Globalization;
+using System.Text.RegularExpressions;
+using System.Drawing.Imaging;
+using DoiTLean.PDFHelper.Structures;
 
 namespace DoiTLean.PDFHelper
 {
@@ -30,9 +31,9 @@ namespace DoiTLean.PDFHelper
         /// <param name="PDF"></param>
         /// <param name="Images"></param>
         /// <param name="ErrorMessage"></param>
-        public void ExtractImagesFromPDF(byte[] PDF, out List<Image> Images, out string ErrorMessage)
+        public void ExtractImagesFromPDF(byte[] PDF, out List<ImageRecord> Images, out string ErrorMessage)
         {
-            Images = new List<Image>();
+            Images = new List<ImageRecord>();
             ErrorMessage = "";
 
 
@@ -50,12 +51,10 @@ namespace DoiTLean.PDFHelper
                 byte[] fileByte = File.ReadAllBytes(file);
                 string ext = Path.GetExtension(file);
 
-                Image imgRecord = new Image(fileByte, ext);
+                ImageRecord imgRecord = new ImageRecord(fileByte, ext);
                 Images.Add(imgRecord);
 
             }
-
-
 
         } // ExtractImagesFromPDF
 
@@ -72,32 +71,40 @@ namespace DoiTLean.PDFHelper
         {
             OutPDF = new byte[] { };
             ErrorMessage = "";
-/*
+
             try
             {
-                using (PdfReader pdfReader = new PdfReader(PDF))
+                using (MemoryStream inputStream = new MemoryStream(PDF))
                 {
-                    using (MemoryStream memoryStream = new MemoryStream())
+                    using (MemoryStream outputStream = new MemoryStream())
                     {
-                        PdfStamper stamper = new PdfStamper(pdfReader, memoryStream);
+                        PdfDocument pdfDoc = new PdfDocument(new PdfReader(inputStream), new PdfWriter(outputStream));
 
-                        for (int i = 0; i <= pdfReader.XrefSize; i++)
+                        for (int i = 1; i <= pdfDoc.GetNumberOfPages(); i++)
                         {
-                            PdfDictionary pd = pdfReader.GetPdfObject(i) as PdfDictionary;
-                            if (pd != null)
+                            PdfPage page = pdfDoc.GetPage(i);
+                            PdfDictionary pageDict = page.GetPdfObject();
+
+                            if (pageDict.ContainsKey(PdfName.JavaScript))
                             {
-                                pd.Remove(PdfName.AA); // Removes automatic execution objects
-                                pd.Remove(PdfName.JS); // Removes javascript objects
-                                pd.Remove(PdfName.JAVASCRIPT); // Removes other javascript objects
+                                pageDict.Remove(PdfName.JavaScript);
+                            }
+
+                            if (pageDict.ContainsKey(PdfName.JS))
+                            {
+                                pageDict.Remove(PdfName.JS);
+                            }
+
+                            if (pageDict.ContainsKey(PdfName.AA))
+                            {
+                                pageDict.Remove(PdfName.AA);
                             }
                         }
-                        stamper.Close();
-                        pdfReader.Close();
 
+                        pdfDoc.Close();
 
                         // Read the generated file in bytes
-                        OutPDF = memoryStream.ToArray();
-
+                        OutPDF = outputStream.ToArray();
                     }
                 }
             }
@@ -105,9 +112,7 @@ namespace DoiTLean.PDFHelper
             {
                 ErrorMessage = ex.Message + " " + ex.StackTrace;
             }
-
-            */
-        } // MssRemoveJavascript
+        } // RemoveJavascript
 
 
 

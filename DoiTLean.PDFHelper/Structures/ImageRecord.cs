@@ -3,10 +3,10 @@
 namespace DoiTLean.PDFHelper.Structures
 {
     /// <summary>
-    /// Image
+    /// ImageRecord
     /// </summary>
-    [OSStructure(Description = "Image.")]
-    public struct Image
+    [OSStructure(Description = "ImageRecord.")]
+    public struct ImageRecord
     {
         [OSStructureField(DataType = OSDataType.BinaryData, Description = "Binary", IsMandatory = true)]
         public byte[] binary;
@@ -14,7 +14,7 @@ namespace DoiTLean.PDFHelper.Structures
         [OSStructureField(DataType = OSDataType.Text, Description = "File extension", IsMandatory = true)]
         public string fileExtension;
 
-        public Image(byte[] inBinary,string inFileExtension) : this()
+        public ImageRecord(byte[] inBinary,string inFileExtension) : this()
         {
             binary = inBinary;
             fileExtension = inFileExtension ?? string.Empty;

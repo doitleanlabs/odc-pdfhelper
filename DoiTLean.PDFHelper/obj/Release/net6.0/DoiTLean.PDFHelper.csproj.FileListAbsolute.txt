@@ -1,12 +1,13 @@
+C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper\bin\Release\net6.0\DoiTLean.PDFHelper.deps.json
+C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper\bin\Release\net6.0\DoiTLean.PDFHelper.dll
+C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper\bin\Release\net6.0\DoiTLean.PDFHelper.pdb
 C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper\obj\Release\net6.0\DoiTLean.PDFHelper.csproj.AssemblyReference.cache
 C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper\obj\Release\net6.0\DoiTLean.PDFHelper.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper\obj\Release\net6.0\DoiTLean.PDFHelper.AssemblyInfoInputs.cache
 C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper\obj\Release\net6.0\DoiTLean.PDFHelper.AssemblyInfo.cs
 C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper\obj\Release\net6.0\DoiTLean.PDFHelper.csproj.CoreCompileInputs.cache
-C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper\bin\Release\net6.0\DoiTLean.PDFHelper.deps.json
-C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper\bin\Release\net6.0\DoiTLean.PDFHelper.dll
-C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper\bin\Release\net6.0\DoiTLean.PDFHelper.pdb
 C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper\obj\Release\net6.0\DoiTLean.PDFHelper.dll
 C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper\obj\Release\net6.0\refint\DoiTLean.PDFHelper.dll
 C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper\obj\Release\net6.0\DoiTLean.PDFHelper.pdb
 C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper\obj\Release\net6.0\ref\DoiTLean.PDFHelper.dll
+C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper\bin\Release\net6.0\resources\pdfhelper.png

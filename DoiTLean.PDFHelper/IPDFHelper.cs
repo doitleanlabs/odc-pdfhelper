@@ -7,7 +7,7 @@ namespace DoiTLean.PDFHelper
     /// <summary>
     /// This extension contains very commonly used actions for PDF
     /// </summary>
-    [OSInterface(Description = "This extension contains very commonly used actions for PDF.", IconResourceName = "DoiTLean.PDFHelper.resources.pdfhelper.png", Name = "PDFHelper")]
+    [OSInterface(Description = "This extension contains very commonly used actions for PDF.", Name = "PDFHelper")]
     public interface IPDFHelper
     {
 
@@ -128,7 +128,7 @@ namespace DoiTLean.PDFHelper
         /// <param name="Images"></param>
         /// <param name="ErrorMessage"></param>
         [OSAction(Description = "Extracts images from a PDF file")]
-        void ExtractImagesFromPDF(byte[] PDF, out List<Image> Images, out string ErrorMessage);
+        void ExtractImagesFromPDF(byte[] PDF, out List<ImageRecord> Images, out string ErrorMessage);
 
 
     }

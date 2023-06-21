@@ -1,3 +1,4 @@
+C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper.UnitTests\bin\Release\net6.0\linux-x64\publish\resources\pdfhelper.png
 C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper.UnitTests\bin\Release\net6.0\linux-x64\publish\testhost.exe
 C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper.UnitTests\bin\Release\net6.0\linux-x64\publish\testhost.dll
 C:\Users\fabio.fantato.DOITLEAN\Source\Repos\odc-pdfhelper\DoiTLean.PDFHelper.UnitTests\bin\Release\net6.0\linux-x64\publish\Microsoft.TestPlatform.PlatformAbstractions.dll

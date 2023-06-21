@@ -1,23 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using System.IO;
+﻿using iText.Kernel.Pdf;
+using iText.Kernel.Pdf.Canvas.Parser;
 using iText.Kernel.Pdf.Canvas.Parser.Data;
-using iText.Kernel.Pdf;
+using iText.Kernel.Pdf.Canvas.Parser.Listener;
+using iText.Kernel.Pdf.Xobject;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace DoiTLean.PDFHelper
 {
     /// <summary>
-    /// Wrapper class for iTextsharp to easily dump all images from a PDF into separate files in a folder.
+    /// Wrapper class for iText7 to easily dump all images from a PDF into separate files in a folder.
     /// </summary>
     /// <remarks>
     /// Adapted from article at:
     /// http://www.thevalvepage.com/swmonkey/2014/11/26/extract-images-from-pdf-files-using-itextsharp/
     /// </remarks>
-    public class ImageExtractor
+    public class ImageExtractor : IEventListener
     {
         /// <summary>
         /// Current page in document.
@@ -72,27 +71,66 @@ namespace DoiTLean.PDFHelper
             bool overwriteExistingFiles)
         {
             // Handle setting of default values
-            outputFilePrefix = outputFilePrefix ?? System.IO.Path.GetFileNameWithoutExtension(pdfPath);
-            outputPath = String.IsNullOrEmpty(outputPath) ? System.IO.Path.GetDirectoryName(pdfPath) : outputPath;
+            outputFilePrefix = outputFilePrefix ?? Path.GetFileNameWithoutExtension(pdfPath);
+            outputPath = String.IsNullOrEmpty(outputPath) ? Path.GetDirectoryName(pdfPath) : outputPath;
 
             var extractor = new ImageExtractor(outputFilePrefix, outputPath, overwriteExistingFiles);
 
+            using (var pdfReader = new PdfReader(pdfPath))
+            {
+                //Skip encrypted PDFs for now
+                if (!pdfReader.IsEncrypted())
+                {
+                    var pdfDocument = new PdfDocument(pdfReader);
+                    var pdfParser = new PdfCanvasProcessor(extractor);
+                    while (extractor.CurrentPage <= pdfDocument.GetNumberOfPages())
+                    {
+                        pdfParser.ProcessPageContent(pdfDocument.GetPage(extractor.CurrentPage));
+                        extractor.CurrentPage++;
+                    }
+                }
+            }
 
             return extractor.ImageCount;
         }
 
-        #region Implementation of IRenderListener
+        #region Implementation of IEventListener
 
-        public void BeginTextBlock() { }
-        public void EndTextBlock() { }
-        public void RenderText(TextRenderInfo renderInfo) { }
-
-        public void RenderImage(ImageRenderInfo renderInfo)
+        public void EventOccurred(IEventData data, EventType type)
         {
-            var imageObject = renderInfo.GetImage();
-          
+            if (type == EventType.RENDER_IMAGE)
+            {
+                var renderInfo = (ImageRenderInfo)data;
+                var imageObject = renderInfo.GetImage();
+                var imageXObject = (PdfImageXObject)imageObject;
 
-            ImageCount++;
+                var imageFileType = "";
+                var subtypeObj = imageXObject.GetPdfObject().GetAsName(PdfName.Subtype);
+                if (subtypeObj != null)
+                {
+                    var subtype = subtypeObj.GetValue();
+                    imageFileType = subtype.ToLower();
+                }
+
+                var imageFileName = String.Format("{0}_{1}_{2}.{3}", _OutputFilePrefix, CurrentPage, ImageCount, imageFileType);
+                var imagePath = Path.Combine(_OutputPath, imageFileName);
+
+                if (_OverwriteExistingFiles || !File.Exists(imagePath))
+                {
+                    var imageBytes = imageXObject.GetImageBytes();
+                    File.WriteAllBytes(imagePath, imageBytes);
+                }
+
+                ImageCount++;
+            }
+
+
+
+        }
+
+        public ICollection<EventType> GetSupportedEvents()
+        {
+            return new EventType[] { EventType.RENDER_IMAGE };
         }
 
         #endregion

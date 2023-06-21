@@ -137,6 +137,10 @@
             "OutSystems.ExternalLibraries.SDK": {
               "target": "Package",
               "version": "[1.4.0, )"
+            },
+            "itext7": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [

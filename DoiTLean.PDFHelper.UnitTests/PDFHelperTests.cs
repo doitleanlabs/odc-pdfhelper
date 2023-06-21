@@ -1,6 +1,6 @@
 using NUnit.Framework;
 using OutSystems.ExternalLibraries.SDK;
-using JSONPair = DoiTLean.PDFHelper.Structures.JSONPair;
+using Argument = DoiTLean.PDFHelper.Structures.Argument;
 
 namespace DoiTLean.PDFHelper.UnitTests;
 
@@ -10,11 +10,9 @@ public class PDFHelperTests {
     /// Tests if the JSONPair constructor correctly creates the JSONPair struct
     /// </summary>
     [Test]
-    public void JSONPairStructureIsCorrectlyCreatedWhenGivenPair() {
-        var pairStruct = new JSONPair("A1","1","2");
-        Assert.That(pairStruct.Attribute, Is.EqualTo("A1"));
-        Assert.That(pairStruct.PreviousValue, Is.EqualTo("1"));
-        Assert.That(pairStruct.NewValue, Is.EqualTo("2"));
+    public void ArgumentStructureIsCorrectlyCreatedWhenGivenPair() {
+        var pairStruct = new Argument("A1");
+        Assert.That(pairStruct.argument, Is.EqualTo("A1"));
     }
 
 

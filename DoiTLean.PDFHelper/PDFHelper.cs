@@ -10,138 +10,255 @@ using System.Text;
 using DoiTLean.PDFHelper.Structures;
 using Newtonsoft.Json;
 using System.IO;
+using iText.Kernel.Pdf.Canvas.Parser;
+using iText.Kernel.Pdf;
+using iText.StyledXmlParser.Jsoup.Nodes;
+using System.Globalization;
 
 namespace DoiTLean.PDFHelper
 {
     /// <summary>
-    ///  The DiffJSON interface defines the methods for parsing two json and returns a list of JSONPairs with the previous and new values for each difference found.
+    /// This extension contains very commonly used actions for PDF
     /// </summary>
     public class PDFHelper : IPDFHelper {
 
+        private const string PDFHelperPrefix = "PDFHelper_";
 
         /// <summary>
-        ///  Parses Left and Right JSON and returns a list of JSONPairs with the previous and new values for each difference found
+        /// 
         /// </summary>
-        public List<JSONPair> Diff(string leftJSON, string rightJSON)
+        /// <param name="PDF"></param>
+        /// <param name="Images"></param>
+        /// <param name="ErrorMessage"></param>
+        public void ExtractImagesFromPDF(byte[] PDF, out List<Image> Images, out string ErrorMessage)
         {
-            List<JSONPair> _resultList = new List<JSONPair>();
-            var jdp = new JsonDiffPatch();
-
-            var left = JToken.Parse(leftJSON);
-            var right = JToken.Parse(rightJSON);
-
-            //LEFT
-            JToken DiffLeft = jdp.Diff(right, left);
+            Images = new List<Image>();
+            ErrorMessage = "";
 
 
-            foreach (JProperty x in left)
+            //Create temporary in File in the filesystem
+            string inFilePath = Path.GetTempPath() + GetPDFTempFilename();
+            File.WriteAllBytes(inFilePath, PDF);
+
+            string outFilePath = CreateUniqueTempDirectory();
+
+
+            ImageExtractor.ExtractImagesFromFile(inFilePath, PDFHelperPrefix, outFilePath, true);
+
+            foreach (string file in Directory.GetFiles(outFilePath))
             {
-                var key = ((JProperty)(x)).Name;
-                string jvalue = ((JProperty)(x)).Value.ToString();
+                byte[] fileByte = File.ReadAllBytes(file);
+                string ext = Path.GetExtension(file);
+
+                Image imgRecord = new Image(fileByte, ext);
+                Images.Add(imgRecord);
+
             }
 
-            foreach (JProperty child in DiffLeft)
-            {
-                JSONPair _result = new JSONPair(child.Name, GetValueFromJTOKEN(left, child.Name), GetValueFromJTOKEN(right, child.Name));
-                _resultList.Add(_result);
-            }
 
-            return _resultList;
-        }
+
+        } // ExtractImagesFromPDF
+
 
 
 
         /// <summary>
-        /// Extract value from JTOKEN
+        /// 
         /// </summary>
-        private string GetValueFromJTOKEN(JToken Jtokenobj, string key)
+        /// <param name="PDF">Binary data of the PDF</param>
+        /// <param name="OutPDF">PDF Binary Data with JS removed.</param>
+        /// <param name="ErrorMessage"></param>
+        public void RemoveJavascript(byte[] PDF, out byte[] OutPDF, out string ErrorMessage)
         {
-
-            foreach (JProperty x in Jtokenobj)
+            OutPDF = new byte[] { };
+            ErrorMessage = "";
+/*
+            try
             {
-                if (((JProperty)(x)).Name == key)
+                using (PdfReader pdfReader = new PdfReader(PDF))
                 {
-                    return ((JProperty)(x)).Value.ToString();
+                    using (MemoryStream memoryStream = new MemoryStream())
+                    {
+                        PdfStamper stamper = new PdfStamper(pdfReader, memoryStream);
+
+                        for (int i = 0; i <= pdfReader.XrefSize; i++)
+                        {
+                            PdfDictionary pd = pdfReader.GetPdfObject(i) as PdfDictionary;
+                            if (pd != null)
+                            {
+                                pd.Remove(PdfName.AA); // Removes automatic execution objects
+                                pd.Remove(PdfName.JS); // Removes javascript objects
+                                pd.Remove(PdfName.JAVASCRIPT); // Removes other javascript objects
+                            }
+                        }
+                        stamper.Close();
+                        pdfReader.Close();
+
+
+                        // Read the generated file in bytes
+                        OutPDF = memoryStream.ToArray();
+
+                    }
                 }
             }
-            return "";
+            catch (Exception ex)
+            {
+                ErrorMessage = ex.Message + " " + ex.StackTrace;
+            }
 
+            */
+        } // MssRemoveJavascript
+
+
+
+        private string GetPDFTempFilename()
+        {
+            return PDFHelperPrefix + Guid.NewGuid().ToString() + ".pdf";
         }
 
-        public string JSON_Listify(string JSONIn, string Path)
+
+
+
+
+        /// <summary>
+        /// Creates the unique temporary directory.
+        /// </summary>
+        /// <returns>
+        /// Directory path.
+        /// </returns>
+        public string CreateUniqueTempDirectory()
         {
-            string JSONOut = "";
-
-            string[] path = Path.Trim().Split('.');
-            JToken root = Inner_Listify(JToken.Parse(JSONIn), path, 0);
-
-            StringBuilder sb = new StringBuilder();
-
-            using (JsonWriter json = new JsonTextWriter(new StringWriter(sb)))
-            {
-                json.Formatting = Formatting.None;
-                json.DateFormatHandling = DateFormatHandling.IsoDateFormat;
-                root.WriteTo(json);
-            }
-
-            JSONOut = sb.ToString();
-            return JSONOut;
-        } // MssJSON_Listify
-
-        private JToken Inner_Listify(JToken root, string[] path, int index)
-        {
-
-            if (root.Type == JTokenType.Array)
-            {
-                // if we're at an array, simply apply to all elements
-                JArray arr = (JArray)root;
-                for (int i = 0; i < arr.Count; i++)
-                {
-                    arr[i] = Inner_Listify(arr[i], path, index);
-                }
-                return arr;
-            }
-
-            if (path.Length == index)
-            {
-                // nothing to do if we're not at an object
-                if (root.Type != JTokenType.Object)
-                    return root;
-
-                // do the listification
-                JObject obj = (JObject)root;
-                JArray res = new JArray();
-                foreach (JProperty p in obj.Properties())
-                {
-                    JObject tmp = new JObject();
-                    tmp["key"] = p.Name;
-                    tmp["value"] = p.Value;
-                    res.Add(tmp);
-                }
-                return res;
-
-            }
-            else
-            {
-                if (path[index].Equals(""))
-                    return Inner_Listify(root, path, index + 1);
-
-                // path[index] != ""
-                if (root.Type == JTokenType.Object)
-                {
-                    JObject obj = (JObject)root;
-                    JToken r = obj[path[index]];
-
-                    if (r == null || r.Type == JTokenType.Null)
-                        return root;
-
-                    obj[path[index]] = Inner_Listify(r, path, index + 1);
-                    return root;
-                }
-
-                return root;
-            }
+            var uniqueTempDir = Path.GetFullPath(Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString()));
+            Directory.CreateDirectory(uniqueTempDir);
+            return uniqueTempDir;
         }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="PDF"></param>
+        /// <param name="Arguments"></param>
+        /// <param name="CompressedPDF"></param>
+        /// <param name="isSuccess"></param>
+        /// <param name="Message"></param>
+        public void CompressPDF(byte[] PDF, List<Argument> Arguments, out byte[] CompressedPDF, out bool isSuccess, out string Message)
+        {
+            CompressedPDF = new byte[] { };
+            isSuccess = false;
+            Message = "";
+
+            //Create temporary in File in the filesystem
+            string inFilePath = Path.GetTempPath() + GetPDFTempFilename();
+            File.WriteAllBytes(inFilePath, PDF);
+
+            string outFilePath = Path.GetTempPath() + GetPDFTempFilename();
+          
+
+        } // CompressPDF
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="PDFBytes"></param>
+        /// <param name="Comments"></param>
+		/// <param name="ErrorMessage"></param>
+        public void GetPDFAnnotation(byte[] PDFBytes, out string ErrorMessage, out List<PDFComment> Comments)
+        {
+            Comments = new List<PDFComment>();
+            ErrorMessage = "";
+          
+        } // GetPDFAnnotation
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="PDF"></param>
+        /// <param name="Watermark_Text"></param>
+        /// <param name="Text_Size"></param>
+        /// <param name="OutPDF"></param>
+        /// <param name="ErrorMessage"></param>
+        public void AddTextWatermarkInPDF_Memory(byte[] PDF, string Watermark_Text, int Text_Size, out byte[] OutPDF, out string ErrorMessage)
+        {
+            OutPDF = new byte[] { };
+            ErrorMessage = "";
+         
+        } // AddTextWatermarkInPDF_Memory
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="PDFBytes"></param>
+        /// <param name="PDFText"></param>
+        /// <param name="ErrorMessage"></param>
+        public void ReadTextFromPDF(byte[] PDFBytes, out string PDFText, out string ErrorMessage)
+        {
+            PDFText = ""; ErrorMessage = "";
+           
+
+        } // ReadTextFromPDF
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="PDF">Binary Data of the pdf file.</param>
+        /// <param name="Watermark_Text">Text Needs to be printed as water mark.</param>
+        /// <param name="Text_Size">Size of Text</param>
+        /// <param name="Temp_Path">Path at which the new watermarked PDF will be generated.</param>
+        /// <param name="OutPDF">PDF Bytes with water mark text.</param>
+        /// <param name="ErrorMessage"></param>
+        public void AddTextWatermarkInPDF_TempPath(byte[] PDF, string Watermark_Text, int Text_Size, string Temp_Path, out byte[] OutPDF, out string ErrorMessage)
+        {
+            OutPDF = new byte[] { };
+            ErrorMessage = "";
+          
+        } // AddTextWatermarkInPDF
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="PdfByte">PDF Filedata</param>
+        /// <param name="XAxis"></param>
+        /// <param name="YAxis"></param>
+        /// <param name="PaginationText"></param>
+        /// <param name="ErrorMsg"></param>
+        /// <param name="PdfOutByte"></param>
+        public void PrintPageNumber(byte[] PdfByte, int XAxis, int YAxis, string PaginationText, out string ErrorMsg, out byte[] PdfOutByte)
+        {
+            ErrorMsg = "";
+            PdfOutByte = new byte[] { };
+
+            if (String.IsNullOrEmpty(PaginationText))
+            {
+                PaginationText = "Page {page_number} of {total_pages}";
+            }
+
+        } // PrintPageNumber
+
+        /// <summary>
+        /// Join Multiple PDF  files in single file
+        /// </summary>
+        /// <param name="PDFFileList"></param>
+        /// <param name="JoinedFile"></param>
+        /// <param name="ErrorMessage"></param>
+        public void JoinPDF(List<PDFFile> PDFFileList, out byte[] JoinedFile, out string ErrorMessage)
+        {
+            JoinedFile = new byte[] { };
+            ErrorMessage = "";
+            int i = 0;
+           
+        } // JoinPDF
+
+
+        public static byte[] JoinFiles(List<byte[]> sourceFiles)
+        {
+            return null;
+        }
+
 
     }
 }
